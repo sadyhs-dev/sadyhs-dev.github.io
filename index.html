@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sady Hernández Saldaña · Desarrollador de software</title>
+<meta name="description" content="Sady Hernández Saldaña, desarrollador de software e ingeniero en sistemas computacionales. Experiencia, estudios y habilidades.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0EA; --ink:#1C2924; --muted:#56655E; --line:#C9D1C8;
+  --accent:#2C47C9; --node:#EDF0EA; --surface:#F6F8F4;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141B18; --ink:#E4EAE4; --muted:#9AA8A0; --line:#2E3A35;
+    --accent:#8DA2FF; --node:#141B18; --surface:#1A2320;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#141B18; --ink:#E4EAE4; --muted:#9AA8A0; --line:#2E3A35;
+  --accent:#8DA2FF; --node:#141B18; --surface:#1A2320;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-size:1.125rem;line-height:1.65}
+h1,h2,h3,.sans{font-family:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.5rem}
+
+/* Hero */
+header{padding:5rem 0 3.5rem;border-bottom:1px solid var(--line)}
+.name{font-size:clamp(2.8rem,9vw,6rem);line-height:.95;letter-spacing:-.035em;font-weight:700;margin:0 0 1.25rem}
+.role{font-family:"Familjen Grotesk",sans-serif;font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:500;margin:0 0 1rem;color:var(--ink)}
+.intro{max-width:36rem;color:var(--muted);margin:0 0 2rem}
+.links{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;font-family:"Familjen Grotesk",sans-serif;font-weight:500}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:.7rem 1.2rem;border-radius:6px;text-decoration:none}
+.btn:hover{background:var(--accent)}
+.links a:not(.btn){padding:.7rem 0}
+
+/* Secciones */
+section{padding:4rem 0;border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:12rem 1fr;gap:2rem}
+@media (max-width:720px){.grid{grid-template-columns:1fr;gap:1rem}}
+h2{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;margin:0;line-height:1.2}
+.lead{max-width:38rem;margin:0}
+
+/* Línea de tiempo tipo historial de commits */
+.log{list-style:none;margin:0;padding:0;position:relative}
+.log::before{content:"";position:absolute;left:.45rem;top:.6rem;bottom:.6rem;width:2px;background:var(--line)}
+.log li{position:relative;padding:0 0 2.25rem 2.25rem}
+.log li:last-child{padding-bottom:0}
+.log li::before{content:"";position:absolute;left:0;top:.45rem;width:1.1rem;height:1.1rem;border-radius:50%;
+  background:var(--node);border:2px solid var(--ink)}
+.log li.now::before{background:var(--accent);border-color:var(--accent)}
+.when{font-family:"Familjen Grotesk",sans-serif;font-size:.95rem;color:var(--muted);margin:0}
+.log h3{font-size:1.25rem;font-weight:600;margin:.15rem 0 .1rem;line-height:1.3}
+.where{margin:0 0 .6rem;color:var(--muted);font-style:italic}
+.log ul{margin:.25rem 0 0;padding-left:1.1rem}
+.log ul li{padding:0 0 .3rem;}
+.log ul li::before{display:none}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0 0;padding:0;list-style:none}
+.tags li{padding:0!important;font-family:"Familjen Grotesk",sans-serif;font-size:.85rem;
+  border:1px solid var(--line);border-radius:4px;padding:.15rem .5rem!important;color:var(--muted)}
+.tags li::before{display:none}
+
+.note{margin-top:2.5rem;padding:1.1rem 1.25rem;background:var(--surface);border-left:3px solid var(--accent);
+  max-width:38rem;font-size:1rem;color:var(--muted)}
+
+/* Habilidades */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem}
+.skills h3{font-size:1.05rem;font-weight:600;margin:0 0 .5rem}
+.skills p{margin:0;color:var(--muted)}
+
+footer{padding:3rem 0 4rem;font-family:"Familjen Grotesk",sans-serif;color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1 class="name">Sady Hernández<br>Saldaña</h1>
+    <p class="role">Desarrollador de software · Ingeniero en Sistemas Computacionales</p>
+    <p class="intro">Desarrollo, mantengo y optimizo aplicaciones web y procesos automatizados con JavaScript, React, Node.js, Python y bases de datos relacionales. Mi formación como maestro en Educación me da algo poco común en el desarrollo: sé explicar lo técnico con claridad y trabajar bien en equipo. Vivo en San Pedro, Coahuila.</p>
+    <div class="links">
+      <a class="btn" href="mailto:sady749@gmail.com">Escríbeme</a>
+      <a href="https://www.linkedin.com/in/sadyhs" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/sadyhs-dev" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="experiencia">
+    <div class="wrap grid">
+      <h2>Experiencia</h2>
+      <div>
+        <ol class="log">
+          <li class="now">
+            <p class="when">2021 – actualidad</p>
+            <h3>Desarrollador</h3>
+            <p class="where">DICEX S.A. de C.V.</p>
+            <ul>
+              <li>Desarrollo y mantenimiento de aplicaciones web con JavaScript, React, Node.js y ColdFusion.</li>
+              <li>Scripts y soluciones backend en Python para automatizar e integrar procesos, algunos con inteligencia artificial.</li>
+              <li>Diseño, administración y optimización de bases de datos en SQL Server.</li>
+              <li>Depuración de errores para mantener el rendimiento y la estabilidad del software.</li>
+              <li>Participación en todo el ciclo de desarrollo: análisis, diseño, implementación y pruebas, con control de versiones en Git.</li>
+            </ul>
+            <ul class="tags"><li>JavaScript</li><li>React</li><li>Node.js</li><li>Python</li><li>ColdFusion</li><li>SQL Server</li><li>Git</li></ul>
+          </li>
+          <li class="now">
+            <p class="when">Diciembre 2024 – actualidad</p>
+            <h3>Docente de la Licenciatura en Ciencias de la Educación</h3>
+            <p class="where">Centro Universitario Coahuilense · Modalidad sabatina</p>
+            <ul>
+              <li>Imparto clases y desarrollo contenido académico, lo que fortalece mi comunicación, planeación y liderazgo, habilidades que aplico en la gestión de proyectos técnicos.</li>
+            </ul>
+          </li>
+        </ol>
+        <p class="note">Los sistemas que desarrollo son de uso interno y privado, por eso no muestro código ni capturas. Con gusto explico a detalle la arquitectura, las tecnologías y las decisiones técnicas en una entrevista.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="estudios">
+    <div class="wrap grid">
+      <h2>Estudios</h2>
+      <ol class="log">
+        <li>
+          <p class="when">2023 – 2025</p>
+          <h3>Maestría en Educación</h3>
+          <p class="where">Centro Universitario Coahuilense</p>
+        </li>
+        <li>
+          <p class="when">2016 – 2021</p>
+          <h3>Ingeniería en Sistemas Computacionales</h3>
+          <p class="where">Instituto Tecnológico Superior de San Pedro de las Colonias</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap grid">
+      <h2>Habilidades</h2>
+      <div class="skills">
+        <div><h3>Lenguajes y frameworks</h3><p>JavaScript, React, Node.js, Python, ColdFusion, HTML, CSS</p></div>
+        <div><h3>Bases de datos</h3><p>SQL Server, MySQL, PostgreSQL</p></div>
+        <div><h3>Herramientas</h3><p>Git y control de versiones</p></div>
+        <div><h3>Competencias</h3><p>Resolución de problemas, trabajo en equipo, comunicación y capacitación</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-mi">
+    <div class="wrap grid">
+      <h2>Sobre mí</h2>
+      <p class="lead">Soy ingeniero en sistemas y también docente. Esa combinación define cómo trabajo: me gusta entender bien el problema antes de programar, documentar lo que hago y compartir lo que sé con mi equipo. Me adapto con facilidad a nuevas tecnologías y metodologías, y disfruto encontrar formas de automatizar el trabajo repetitivo para que las personas se enfoquen en lo importante.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Sady Hernández Saldaña · <a href="mailto:sady749@gmail.com">sady749@gmail.com</a></p>
+  </div>
+</footer>
+</body>
+</html>
